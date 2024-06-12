@@ -15,7 +15,7 @@ import java.util.Map;
 
 @CrossOrigin(maxAge = 3600000)
 @RestController
-public class LoginController {
+public class  LoginController {
     @Autowired
     private TeacherService teacherService;
     @PostMapping("/login")
