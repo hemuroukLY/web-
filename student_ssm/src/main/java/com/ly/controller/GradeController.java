@@ -12,7 +12,7 @@ import java.util.List;
 
 @CrossOrigin(maxAge = 3600000)
 @RestController
-public class GradeController {
+public class  GradeController {
 
     @Autowired
     private GradeService gradeService;
