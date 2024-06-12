@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkproject"]=self["webpackChunkproject"]||[]).push([[701],{4701:function(t,n,e){e.r(n),e.d(n,{default:function(){return i}});var u=function(){var t=this;t._self._c;return t._m(0)},r=[function(){var t=this,n=t._self._c;return n("div",{staticClass:"title"},[n("h1",[t._v("本系统由李宇 李城杰共同创建，如有雷同，我们有权利追究法律责任")])])}],l=e(1656),s={},c=(0,l.A)(s,u,r,!1,null,null,null),i=c.exports}}]);
+//# sourceMappingURL=701.8e835890.js.map

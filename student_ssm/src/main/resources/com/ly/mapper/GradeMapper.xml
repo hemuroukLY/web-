@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ly.mapper.GradeMapper">
+
+    <insert id="addGrade">
+        insert into grade values (#{id},#{name},#{math},#{java},#{english},#{sports})
+    </insert>
+
+    <update id="updateGrade">
+        update grade set math=#{math},java=#{java},english=#{english},sports=#{sports} where id=#{id}
+    </update>
+
+    <delete id="deleteGrade">
+        delete  from grade where id=#{id}
+    </delete>
+
+    <select id="searchGradeById" resultType="com.ly.pojo.Grade">
+        select * from grade where  id=#{id}
+    </select>
+
+    <select id="searchGradeByName" resultType="com.ly.pojo.Grade">
+        select * from grade where  name like concat('%',#{name},'%')
+    </select>
+
+    <select id="getALlGradeList" resultType="com.ly.pojo.Grade">
+        select * from  grade
+    </select>
+
+    <select id="getExcelGrade" resultType="com.ly.pojo.ExcelGrade">
+        select *,(java+math+english+sports) AS total from grade
+    </select>
+
+</mapper>

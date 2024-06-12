@@ -1,0 +1,33 @@
+学生属性：
+学号：id
+姓名：name
+性别：gender
+出生年月：birthday
+
+成绩：
+学号：id
+姓名：name
+数学：math
+java：java
+英语：english
+体育：sports
+
+创建数据库
+create datebase Student
+创建学生表
+create table Student(
+	id int primary key auto_increment,
+	name varchar(20) ,
+	gender varchar(2),
+	birthday date
+);
+
+create table Grade(
+	id INT ,
+	math INT CHECK(math >= 0 AND math <= 100),
+	java INT CHECK(java >= 0 AND java <= 100),
+	english INT CHECK(english >= 0 AND english <= 100),
+	sports INT CHECK(sports >= 0 AND sports <= 100),
+	CONSTRAINT fk_Student_id
+	FOREIGN KEY (id) REFERENCES Student(id)
+);
