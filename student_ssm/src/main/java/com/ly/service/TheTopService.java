@@ -1,9 +1,11 @@
 package com.ly.service;
 
-import com.ly.pojo.Grade;
+import com.ly.pojo.ExcelGrade;
+
 
 import java.util.List;
 
 public interface TheTopService {
-    List<Grade> getTop(String byName);
+    List<ExcelGrade> getTop(String byName);
+    List<ExcelGrade> getExcelTop();
 }

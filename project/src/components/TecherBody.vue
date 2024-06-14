@@ -27,6 +27,9 @@
             <router-link to="/score">
             <el-menu-item index="4-1" >综合成绩</el-menu-item>
             </router-link>
+            <router-link to="/sortscore">
+            <el-menu-item index="4-2" >排行榜</el-menu-item>
+            </router-link>
         </el-submenu>
         </el-menu>
     </el-aside>

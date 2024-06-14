@@ -2,8 +2,32 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ly.mapper.TheTopMapper">
-
-    <select id="getTop" resultType="com.ly.pojo.Grade">
-        select * from grade order by #{byName}
+    <select id="getTop" resultType="com.ly.pojo.ExcelGrade">
+        SELECT *,(java+math+english+sports) AS total FROM grade
+        <choose>
+            <when test="byName == 'java'">
+                ORDER BY java DESC
+            </when>
+            <when test="byName == 'math'">
+                ORDER BY math DESC
+            </when>
+            <when test="byName == 'english'">
+                ORDER BY english DESC
+            </when>
+            <when test="byName == 'sports'">
+                ORDER BY sports DESC
+            </when>
+            <when test="byName == 'total'">
+                ORDER BY total DESC
+            </when>
+            <otherwise>
+                ORDER BY defaultColumn DESC
+            </otherwise>
+        </choose>
     </select>
+    <select id="getExcelTop" resultType="com.ly.pojo.ExcelGrade">
+        select *,(java+math+english+sports) AS total from grade order by total DESC
+    </select>
+
+
 </mapper>

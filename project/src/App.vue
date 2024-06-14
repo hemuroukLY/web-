@@ -1,7 +1,7 @@
 <template>
   <div>
     <TheHeader></TheHeader>
-  <TecherBody></TecherBody>
+    <TecherBody></TecherBody>
 </div>
   </template>
   
@@ -25,7 +25,7 @@
   </style>
   
   <script>
-  import TheHeader from './components/TheHeader.vue';
+import TheHeader from './components/TheHeader.vue';
 import TecherBody from './components/TecherBody.vue';
     export default {
       components:{

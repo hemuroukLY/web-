@@ -203,10 +203,13 @@ export default{
                             'token':localStorage.getItem("jwt")
                     }
                 }).then((res) => {
-                    console.log(res.data)
+                        
                         this.students=[];
-                        if(res.data){
+                        if(res.data.length != 0){
                         this.students=res.data;}
+                        else{
+                            alert("未找到相关学生成绩信息")
+                        }
                         console.log(res);
                 })
                 .catch(error=>
@@ -226,11 +229,13 @@ export default{
                             'token':localStorage.getItem("jwt")
                     }
                     }).then((res) => {         
-                        console.log(res.data)
+                        console.log(res.data.id)
                         this.students=[];
-                        if(res.data){
+                        if(res.data.id != null){
                         this.students[0]=res.data;}
-                        console.log(res);
+                        else{
+                            alert("未找到相关学生成绩信息")
+                        }
                         
                     })
                     .catch((err) => {
@@ -306,6 +311,12 @@ export default{
                 })
                 .then((res) => {
                     this.GetData(this.page.pageNo)
+                    this.form={
+                        java:'',
+                        math:'',
+                        english:'',
+                        sports:''
+                    }
                     console.log(res);
                 })
                 .catch(error=>

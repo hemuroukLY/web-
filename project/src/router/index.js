@@ -5,7 +5,11 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 const routes = [
-
+  {
+    path:'/sortscore',
+    name: 'sort',
+    component:()=>import('../views/SortScore.vue')
+  },
   
   {
     path: '/',
